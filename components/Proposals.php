@@ -39,26 +39,7 @@ class Proposals extends ComponentBase
                 'proposal' => $newProposal->question
             ];
 
-            // Mail::send('al3xtig3r.questions::new-question', $vars, function($message) use ($newProposal) {
-
-            //     $message->to('info@alessiovietri.it', 'AV | Digital Solutions');
-            //     $message->subject('Nuova proposta');
-
-            // });
-
             Flash::success(Lang::get('al3xtig3r.blogutils::lang.components.proposals.sent-success'));
-
-            // TODO: prima di pubblicarlo, inserire:
-            // - Settings
-            // - Selezione modello email domande nelle Settings
-            // - Selezione modello email risposte nelle Settings
-            // - default del form svincolato dal tema (semplice)
-            // - Traduzione controller vari
-            // - Dati testuali tradotti (descrizione, nome ecc)
-            // - Aggiungere descrizione metodo
-            // - Cambiare if con validazione
-            // - Aggiungere invio email quando rispondo
-            // - Nella pagina con columns mettere un filtro: "non risposte" -> come "ldv non generata" su TP
         }
         else
             Flash::error(Lang::get('al3xtig3r.blogutils::lang.components.proposals.missing-error'));
