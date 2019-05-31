@@ -1,0 +1,38 @@
+<form
+    id="proposals-form"
+    data-request="proposals::onPropose"
+    data-request-flash
+    data-request-loading=".sending-container"
+    data-request-success="$('#proposals-form').find('input[type=text], input[type=email], textarea').val(''); $('#proposals-form').find('input, textarea').focusout();"
+    data-request-complete="$('#proposals-form button[type=submit]').prop('disabled', false);">
+    <div class="input-field name-container">
+        <input type="text" name="name-input" maxlength="64" autocomplete="off">
+        <label for="name-input">{{ 'al3xtig3r.blogutils::lang.components.proposals.form.name'|trans }}</label>
+    </div>
+    <div class="input-field email-container">
+        <input type="email" name="email-input" maxlength="128" autocomplete="off">
+        <label for="email-input">{{ 'al3xtig3r.blogutils::lang.components.proposals.form.email'|trans }}</label>
+    </div>
+    <div class="input-field proposal-container">
+        <textarea name="proposal-input" class="materialize-textarea" maxlength="1024" required></textarea>
+        <label for="proposal-input">{{ 'al3xtig3r.blogutils::lang.components.proposals.form.proposal'|trans }}</label>
+    </div>
+    <button class="btn waves-effect light-green waves-light right" type="submit" name="action">
+        {{ 'al3xtig3r.blogutils::lang.components.proposals.form.submit'|trans }} <i class="material-icons right">send</i>
+    </button>
+    <div class="sending-container">
+        <span class="hide-on-small-only">
+            {{ 'al3xtig3r.blogutils::lang.components.proposals.form.sending'|trans }}
+        </span>
+    </div>
+</form>
+
+{% put scripts %}
+
+<script>
+    $(document).on('submit', '#proposals-form', function(e){
+        $('#proposals-form button[type="submit"]').prop('disabled', true);
+    });
+</script>
+
+{% endput %}

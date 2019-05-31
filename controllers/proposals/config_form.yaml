@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: al3xtig3r.blogutils::lang.proposals.single
+
+# Model Form Field configuration
+form: $/al3xtig3r/blogutils/models/proposal/fields.yaml
+
+# Model Class name
+modelClass: Al3xTig3r\BlogUtils\Models\Proposal
+
+# Default redirect location
+defaultRedirect: al3xtig3r/blogutils/proposals
+
+# Create page
+create:
+    title: al3xtig3r.blogutils::lang.proposals.create.title
+    redirect: al3xtig3r/blogutils/proposals/update/:id
+    redirectClose: al3xtig3r/blogutils/proposals
+
+# Update page
+update:
+    title: al3xtig3r.blogutils::lang.proposals.update.title
+    redirect: al3xtig3r/blogutils/proposals
+    redirectClose: al3xtig3r/blogutils/proposals
+
+# Preview page
+preview:
+    title: al3xtig3r.blogutils::lang.proposals.preview.title

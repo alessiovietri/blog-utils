@@ -1,0 +1,56 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li>
+            <a href="<?= Backend::url('al3xtig3r/blogutils/proposals') ?>">
+                <?= e(trans('al3xtig3r.blogutils::lang.proposals.multiple')) ?>
+            </a>
+        </li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="<?= e(trans('al3xtig3r.blogutils::lang.proposals.create.creating')) ?>"
+                    class="btn btn-primary">
+                    <?= e(trans('al3xtig3r.blogutils::lang.proposals.create.create')) ?>
+                </button>
+                <button
+                    type="button"
+                    data-request="onSave"
+                    data-request-data="close:1"
+                    data-hotkey="ctrl+enter, cmd+enter"
+                    data-load-indicator="<?= e(trans('al3xtig3r.blogutils::lang.proposals.create.creating')) ?>"
+                    class="btn btn-default">
+                    <?= e(trans('al3xtig3r.blogutils::lang.proposals.create.create_close')) ?>
+                </button>
+                <span class="btn-text">
+                    <?= trans('al3xtig3r.blogutils::lang.proposals.create.cancel', ['url' => Backend::url('al3xtig3r/blogutils/proposals')]) ?>
+                </span>
+            </div>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p>
+        <a href="<?= Backend::url('al3xtig3r/blogutils/proposals') ?>" class="btn btn-default">
+            <?= e(trans('al3xtig3r.blogutils::lang.proposals.create.return')) ?>
+        </a>
+    </p>
+
+<?php endif ?>

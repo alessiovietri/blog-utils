@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: al3xtig3r.blogutils::lang.components.proposals.columns.name
+        searchable: true
+    email:
+        label: al3xtig3r.blogutils::lang.components.proposals.columns.email
+        searchable: true
+    proposal:
+        label: al3xtig3r.blogutils::lang.components.proposals.columns.proposal
+        searchable: true
+    used:
+        label: al3xtig3r.blogutils::lang.components.proposals.columns.used
+        searchable: false
+        type: switch

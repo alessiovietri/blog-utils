@@ -1,0 +1,38 @@
+{% set prevPost = __SELF__.getPrev(post.id) %}
+{% set nextPost = __SELF__.getNext(post.id) %}
+
+<div>
+    {% if prevPost %}
+        <div>
+            <div>
+                Prev post:
+            </div>
+            <h3>
+                {{ prevPost.title }}
+            </h3>
+            <div>
+                {{ prevPost.published_at|date('d M Y') }}
+            </div>
+            <p>
+                {{ prevPost.summary|raw }}
+            </p>
+        </div>
+    {% endif %}
+
+    {% if nextPost %}
+        <div>
+            <div>
+                Next post:
+            </div>
+            <h3>
+                {{ nextPost.title }}
+            </h3>
+            <div>
+                {{ nextPost.published_at|date('d M Y') }}
+            </div>
+            <p>
+                {{ nextPost.summary|raw }}
+            </p>
+        </div>
+    {% endif %}
+</div>
