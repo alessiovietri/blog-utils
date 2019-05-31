@@ -1,0 +1,17 @@
+{% set lastPost = __SELF__.get() %}
+
+<div>
+    {% if lastPost %}
+        <h3>
+            {{ lastPost.title }}
+        </h3>
+        <div>
+            {{ lastPost.published_at|date('d M Y') }}
+        </div>
+        <p>
+            {{ lastPost.summary|raw }}
+        </p>
+    {% else %}
+        No post published
+    {% endif %}
+</div>

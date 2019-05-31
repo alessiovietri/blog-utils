@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: al3xtig3r.blogutils::lang.components.proposals.fields.name
+        span: left
+    email:
+        label: al3xtig3r.blogutils::lang.components.proposals.fields.email
+        span: right
+    proposal:
+        label: al3xtig3r.blogutils::lang.components.proposals.fields.proposal
+        type: textarea
+    used:
+        label: al3xtig3r.blogutils::lang.components.proposals.fields.used
+        type: switch
