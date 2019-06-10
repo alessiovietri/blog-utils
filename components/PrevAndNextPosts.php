@@ -2,6 +2,8 @@
 
 use Cms\Classes\ComponentBase;
 
+use Lang;
+
 use RainLab\Blog\Models\Post;
 
 class PrevAndNextPosts extends ComponentBase
