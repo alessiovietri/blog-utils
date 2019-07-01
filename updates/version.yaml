@@ -4,3 +4,5 @@
 - create_proposals_table.php
 1.0.3:
 - Bug fixing for unpublished posts
+1.0.4:
+- Real bug fixing for unpublished posts...
