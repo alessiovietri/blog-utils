@@ -25,8 +25,8 @@ class PrevAndNextPosts extends ComponentBase
     {
         $post = Post::find($postId);
 
-        $prevPost = Post::where('published_at', '<', $post->published_at)
-                        ->where('published', true)
+        $prevPost = Post::where('published', true)
+                        ->where('published_at', '<', $post->published_at)
                         ->max('id');
 
         if($prevPost)
@@ -39,8 +39,8 @@ class PrevAndNextPosts extends ComponentBase
     {
         $post = Post::find($postId);
 
-        $nextPost = Post::where('published_at', '>', $post->published_at)
-                        ->where('published', true)
+        $nextPost = Post::where('published', true)
+                        ->where('published_at', '>', $post->published_at)
                         ->min('id');
 
         if($nextPost)
