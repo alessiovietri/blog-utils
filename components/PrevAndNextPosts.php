@@ -25,27 +25,35 @@ class PrevAndNextPosts extends ComponentBase
     {
         $post = Post::find($postId);
 
-        $prevPost = Post::where('published', true)
-                        ->where('published_at', '<', $post->published_at)
-                        ->max('id');
+        if($post->published){
+            $prevPost = Post::where('published', true)
+                            ->where('published_at', '<', $post->published_at)
+                            ->max('id');
 
-        if($prevPost)
+            if($prevPost)
             $prevPost = Post::find($prevPost);
 
-        return $prevPost;
+            return $prevPost;
+        }
+        else
+            return null;
     }
 
     public function getNext($postId)
     {
         $post = Post::find($postId);
 
-        $nextPost = Post::where('published', true)
-                        ->where('published_at', '>', $post->published_at)
-                        ->min('id');
+        if($post->published){
+            $nextPost = Post::where('published', true)
+                            ->where('published_at', '>', $post->published_at)
+                            ->min('id');
 
-        if($nextPost)
-            $nextPost = Post::find($nextPost);
+            if($nextPost)
+                $nextPost = Post::find($nextPost);
 
-        return $nextPost;
+            return $nextPost;
+        }
+        else
+            return null;
     }
 }
